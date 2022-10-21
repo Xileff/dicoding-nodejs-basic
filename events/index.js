@@ -2,11 +2,11 @@
 const { EventEmitter } = require('events')
 const myEventEmitter = new EventEmitter();
 
-// method
-const makeCoffee = name => console.log(`Kopi ${name} telah dibuat!`)
+// Methods
+const makeCoffee = name => console.log(`Coffee ${name} is ready!`)
 
 const makeBill = price => {
-    console.log(`Bill sebesar ${price} telah dibuat!`);
+    console.log(`${price} bill has been generated!`);
 }
 
 const onCoffeeOrderedListener = ({ name, price }) => {
@@ -14,8 +14,8 @@ const onCoffeeOrderedListener = ({ name, price }) => {
     makeBill(price);
 }
 
-// Mendaftarkan fungsi makeCoffee dan makeBill sebagai listener event coffee-order
+// Registering methods makeCoffee and makeBill as listeners to the event coffee-order
 myEventEmitter.on('coffee-order', onCoffeeOrderedListener)
 
-// Emit event 'coffee-order'
-myEventEmitter.emit('coffee-order', { name: 'Tubruk', price: 15000 });
+// Emit the event 'coffee-order'
+myEventEmitter.emit('coffee-order', { name: 'Americano', price: 15000 });
