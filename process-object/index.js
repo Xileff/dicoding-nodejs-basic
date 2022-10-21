@@ -14,3 +14,5 @@ console.log(`Penggunaan memori dari ${initialMemoryUsage} naik ke ${currentMemor
 
 // Cara set env di powershell
 // $env:NODE_ENV="production"
+// kalo di package.json, tetap pake SET NODE_ENV, kek gini
+// "start-dev": "set NODE_ENV='development' && node app.js",
